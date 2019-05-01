@@ -4,7 +4,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Menssagem</title>
-          
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
      <% 
@@ -13,7 +15,8 @@
                 String datanacimento = request.getParameter("datanacimento");
                  String cpf = request.getParameter("cpf");
                   %>
-                  <%=nome%> nasceu em <%=datanacimento%> e possui o CPF <%=cpf%>
+                  <div class="container"><h3><%=nome%></h3><p><h4><%=nome%> nasceu em <%=datanacimento%> e possui o CPF <%=cpf%></h4> </div>
+                 
               
                   
                   

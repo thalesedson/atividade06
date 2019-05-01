@@ -5,15 +5,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Formulario</title>
-        
+         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+       
         <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/jquery.validate.min.js" type="text/javascript"></script>		
         <script src="js/additional-methods.min.js" type="text/javascript"></script>		
         <script src="js/jquery.mask.min.js" type="text/javascript"></script>
         <script src="js/messages_pt_BR.js" type="text/javascript"></script> 
+      
+        <% 
+              String nome = request.getParameter("nome");
+               String telefone = request.getParameter("telefone");
+                String datanacimento = request.getParameter("datanacimento");
+                 String cpf = request.getParameter("cpf");
+                  %>
          <script type="text/javascript">
              
 jQuery.validator.addMethod("anoAntigo",
@@ -32,7 +39,7 @@ jQuery.validator.addMethod("anoAntigo",
                 $("#telefone").mask("(00)0000-0000")
                  $("#datanacimento").mask("00/00/0000")
                 $("#cpf").mask("000.000.000-00")
-                $("#formCadastro").validate({
+                $("#formulario").validate({
                     rules: {
                         datanacimento: {
                             dateITA: true,
@@ -47,7 +54,7 @@ jQuery.validator.addMethod("anoAntigo",
                         },
                        telefone: {
                             required: true,
-                            telefone: true
+                            
                         },
                        
                         cpf:{
@@ -72,11 +79,11 @@ jQuery.validator.addMethod("anoAntigo",
                         },
                         datanacimento:{
                              required: "É obrigatorio adicionar a data de nacimento"
-                        },
+                        }
                         
                        
-                   }
-                    
+                   },
+                   
                 })
             })
         </script>
@@ -94,17 +101,17 @@ jQuery.validator.addMethod("anoAntigo",
                 </div>
                 <div class="row">
                     <label>Telefone</label>
-                    <input type="tex" name="telefone" id="telefone" placeholder=(00)0000-0000 style= "width:30%" class="form-control"/>
+                    <input type="tex" name="telefone" id="telefone" placeholder=(00)0000-0000 style= "width:20%" class="form-control"/>
                 </div>	
                 <div class="row">
                     <label>CPF</label>
-                    <input type="text" name="cpf" id="cpf" style= "width:30%" placeholder="000.000.000-00" class="form-control"/>
+                    <input type="text" name="cpf" id="cpf" style= "width:20%" placeholder="000.000.000-00" class="form-control"/>
                 </div>
                 <div class="row">
                     <label>Data de nacimento</label>
-                    <input type="text" name="datanacimento" style= "width:30%" placeholder="00/00/0000 "id="datanacimento" class="form-control"/>
+                    <input type="text" name="datanacimento" style= "width:20%" placeholder="00/00/0000 "id="datanacimento" class="form-control"/>
                 </div>
-               
+            <br/>
                 <div class="row">
                    <input type="submit" name="enviar" style= "width:30%" id="enviar"  class="btn btn-primary form-control">
 	</div>
